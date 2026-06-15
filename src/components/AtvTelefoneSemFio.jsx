@@ -7,3 +7,8 @@ Cada <Pressable> ao ser clicado, deve inserir na <View> abaixo um <Text> e um <T
 e substituir o conteúdo anterior dessa <View> de baixo dos botões.
 O texto digitado no <TextInput> ativado por um <Pressable> deve ser exibido no <Text> do outro <Pressable>, e vice-versa.
 */
+import React, { useState } from "react";
+import { View, Text, TextInput, Pressable, StyleSheet } from "react-native";
+export default function AtvTelefoneSemFio() {
+
+}
