@@ -19,3 +19,65 @@ _________________________________
 | É um prazer lhe conhecer...   |
 |_______________________________|
 */
+
+
+
+import {View, Text, Pressable, TextInput ,StyleSheet} from 'react-native';
+import { useState } from 'react';
+
+const estilo = StyleSheet.create({
+    view: {
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    texto: {
+        color: 'blue',
+        fontSize: '30px',
+        backgroundColor: 'pink',
+        borderRadius: '30%',
+    },
+    input: {
+        backgroundColor: 'pink',
+        margin: '5px',
+        border: '5px solid blue',
+        borderRadius: '30%'
+    },
+    press: {
+        
+    },
+    textoPress: {
+        color: 'yellow',
+        fontSize: '30px',
+        backgroundColor: 'grey',
+        borderRadius: '30%',
+    },
+    textoResposta: {
+        
+    }
+
+    })
+
+export default function AtvCumprimenta(){
+    const [textoInserido, setTextoInserido] = useState("")
+    const [texto, setTexto] = useState("Olá, qual seu nome?")
+
+    return(
+        <View style = {estilo.view}>
+            <Text style = {estilo.texto}>
+                {texto}
+            </Text>
+            <TextInput
+                style = {estilo.input}
+                value = {textoInserido}
+                onChangeText = {setTextoInserido}
+                placeholder = "Nome aqui"
+            />
+            <Pressable style = {estilo.press} onPress = {() => setTexto(textoInserido)}>
+                <Text style = {estilo.textoPress}>Salvar</Text>
+            </Pressable>
+            <Text style = {estilo.textoResposta}>
+                {setTexto}
+            </Text>
+        </View>
+    )
+}
