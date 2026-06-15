@@ -19,3 +19,54 @@ _________________________________
 | É um prazer lhe conhecer...   |
 |_______________________________|
 */
+import React, { useState } from 'react';
+import { View, Text, TextInput, Pressable, StyleSheet } from 'react-native';
+
+export default function AtvCumprimenta() {
+  const [nome, setNome] = useState('');
+  const [mensagem, setMensagem] = useState('');
+
+  const lidarComPressao = () => {
+    setMensagem(`É um prazer lhe conhecer, ${nome}`);
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text>Olá, qual seu nome?</Text>
+      
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.input}
+          placeholder="Nome aqui"
+          onChangeText={setNome}
+          value={nome}
+        />
+        <Pressable style={styles.botao} onPress={lidarComPressao}>
+          <Text>Salvar</Text>
+        </Pressable>
+      </View>
+
+      {mensagem !== '' && <Text>{mensagem}</Text>}
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 20,
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+  input: {
+    borderBottomWidth: 1,
+    marginRight: 10,
+    flex: 1,
+  },
+  botao: {
+    borderWidth: 1,
+    padding: 5,
+  },
+});
