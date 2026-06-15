@@ -6,7 +6,7 @@ O componente deve exibir uma <View> contendo um <Text>, que vai exibir este núm
 e um <Pressable>, que ao ser clicado, modifica o valor do número para dobrar o valor dele.
 */
 
-import { View, Text, TextInput, Pressable, StyleSheet } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import { useState } from 'react'
 
 export default function AtvDobra(numero) {
