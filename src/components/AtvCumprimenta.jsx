@@ -44,7 +44,7 @@ const estilo = StyleSheet.create({
         
     },
     textoPress: {
-        color: 'green',
+        color: 'blue',
         fontSize: '30px',
         backgroundColor: 'pink',
         borderRadius: '30%',
