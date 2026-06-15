@@ -19,3 +19,24 @@ _________________________________
 | É um prazer lhe conhecer...   |
 |_______________________________|
 */
+
+export default function AtvCumprimenta () {
+  const [nome, setNome] = useState("")
+  const [texto, setTexto] = useState("Olá, qual seu nome?")
+
+  return(
+    <View>
+      <Text>
+        {texto}
+      </Text>
+      <TextInput
+        value={nome}
+        onChangeText={setNome}
+        placeholder="Nome aqui"
+      />
+      <Pressable onPress={() => setTexto(nome)}>
+        <Text >Salvar </Text>
+      </Pressable>
+    </View>
+  )
+}
