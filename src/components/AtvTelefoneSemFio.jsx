@@ -13,26 +13,57 @@ O texto digitado no <TextInput> ativado por um <Pressable> deve ser exibido no <
 import { View, Text, Pressable, StyleSheet, TextInput } from 'react-native'
 import { useState } from 'react'
 
+
 export default function AtvTelefoneSemFio(){
    
-    const [textoInserido, setTextoInserido] = useState("")
-    const [texto, setTexto] = useState("jkjkjkj")
 
-}
+    const [pagina, setPagina] = useState("");
+const [texto1, setTexto1] = useState("");
+const [texto2, setTexto2] = useState("");
 
 
 return(
-    <View>
-        <Pressable>
-        onChangeText={setTextoInserido}
-        placeholder="Digite aqui o novo texto"
-        </Pressable>
-         <Pressable>
-         onChangeText={setTextoInserido}
-        placeholder="Digite aqui o novo texto"
-        </Pressable>
+<View>
+    <View style={{ flexDirection: "row" }}>
+    <Pressable onPress={() => setPagina("1")}>
+        <Text>Botão 1</Text>
+    </Pressable>
+
+    <Pressable onPress={() => setPagina("2")}>
+        <Text>Botão 2</Text>
+    </Pressable>
+</View>
+
+<View style={{ marginTop: 20 }}>
+
+    {pagina === "1" && (
         <View>
-        
-    </View>
-    </View>
-)
+            <Text>{texto2}</Text>
+
+            <TextInput
+                value={texto1}
+                onChangeText={setTexto1}
+                placeholder="insira o texto"
+            />
+        </View>
+    )}
+
+    {pagina === "2" && (
+        <View>
+            <Text>{texto1}</Text>
+
+            <TextInput
+                value={texto2}
+                onChangeText={setTexto2}
+                placeholder="insira o texto "
+            />
+        </View>
+    )}
+
+</View>
+      
+</View>
+
+    )
+    
+    }
