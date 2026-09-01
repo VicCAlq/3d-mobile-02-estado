@@ -1,8 +1,6 @@
-// Elementos necessários para o componente
 import { View, Text, Pressable, StyleSheet } from 'react-native'
 import { useState } from 'react'
 
-// Estilos de "CSS"
 const estilo = StyleSheet.create({
   view: {
     alignItems: "center",
@@ -38,10 +36,8 @@ const estilo = StyleSheet.create({
 })
 
 export default function Placar() {
-  // Criação da variável "placar" e da função que altera seu valor
   const [placar, setPlacar] = useState(0)
 
-  // Funções que vão ser executadas pelos botões
   function marcarPonto() {
     setPlacar(placar + 1)
   }
@@ -50,7 +46,6 @@ export default function Placar() {
     setPlacar(placar - 1)
   }
 
-  // Parte visual do componente
   return(
     <View style={estilo.view}>
       <Text style={estilo.texto}>
