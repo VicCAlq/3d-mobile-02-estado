@@ -10,24 +10,34 @@ O texto digitado no <TextInput> ativado por um <Pressable> deve ser exibido no <
 
 import { View, Text, Pressable, StyleSheet, TextInput } from 'react-native'
 import { useState } from 'react'
+
+
 export default function AtvTelefoneSemFio(){
+   
+
     const [pagina, setPagina] = useState("");
 const [texto1, setTexto1] = useState("");
 const [texto2, setTexto2] = useState("");
+
+
 return(
 <View>
     <View style={{ flexDirection: "row" }}>
     <Pressable onPress={() => setPagina("1")}>
         <Text>Botão 1</Text>
     </Pressable>
+
     <Pressable onPress={() => setPagina("2")}>
         <Text>Botão 2</Text>
     </Pressable>
 </View>
+
 <View style={{ marginTop: 20 }}>
+
     {pagina === "1" && (
         <View>
             <Text>{texto2}</Text>
+
             <TextInput
                 value={texto1}
                 onChangeText={setTexto1}
@@ -35,9 +45,11 @@ return(
             />
         </View>
     )}
+
     {pagina === "2" && (
         <View>
             <Text>{texto1}</Text>
+
             <TextInput
                 value={texto2}
                 onChangeText={setTexto2}
@@ -45,8 +57,11 @@ return(
             />
         </View>
     )}
+
 </View>
+      
 </View>
+
     )
     
     }
