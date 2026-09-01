@@ -20,72 +20,62 @@ _________________________________
 |_______________________________|
 */
 
-import { View, Text, Pressable, StyleSheet, TextInput} from 'react-native'
-import { useState } from 'react'
+import {View, Text, Pressable, TextInput ,StyleSheet} from 'react-native';
+import { useState } from 'react';
 
-// Estilos de "CSS"
 const estilo = StyleSheet.create({
-  view: {
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: "10px",
-    backgroundColor: "#303540",
-    padding: "10px",
-    margin: "10px",
-    gap: "10px",
-  },
-  texto: {
-    color: "#eee",
-    fontSize: "32px",
-  },
-  textoBotao: {
-    color: "#eee",
-    fontSize: "16px",
-  },
-  botao: {
-    borderRadius: "5px",
-    backgroundColor: "#505560",
-    padding: "10px",
-    margin: "10px",
-  },
-  viewBotoes: {
-    display: "flex",
-    flexDirection: "row",
-    flex: "1 0",
-    width: "100%",
-    justifyContent: "space-between",
-    alignItems: "center",
-  }
-})
+    view: {
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    texto: {
+        color: 'black',
+        fontSize: '30px',
+        backgroundColor: 'white',
+        borderRadius: '30%',
+    },
+    input: {
+        backgroundColor: 'gray',
+        margin: '5px',
+        border: '5px solid blue',
+        borderRadius: '30%'
+    },
+    press: {
+        
+    },
+    textoPress: {
+        color: 'navy',
+        fontSize: '30px',
+        backgroundColor: 'red',
+        borderRadius: '30%',
+    },
+    textoResposta: {
+        
+    }
 
-export default function AtvCumprimenta() {
- const [texto, setValorAtual] = useState('');
+    })
 
- function novonome() {
-    setValorAtual()
-  }
+export default function AtvCumprimenta(){
+    const [textoInserido, setTextoInserido] = useState("")
+    const [texto, setTexto] = useState("Olá, qual seu nome?")
 
-  function perderPonto() {
-    setPlacar(placar - 1)
-  }
-
-  return(
-    <View style={estilo.view}>
-      <Text style={estilo.texto}>
-        "Olá, qual seu nome?"
-      </Text>
-         <TextInput 
-        placeholder="Digite um nome"
-        onChangeText={(texto) => setValorAtual(texto)}
-      />
-       <Pressable style={estilo.botao} onPress={() => console.log("")}>
-        </Pressable>
-
-      <View style={estilo.viewBotoes}>
-        <Pressable style={estilo.botao} onPress={() => Dobrar()}>
-          <Text style={estilo.textoBotao}>dobrar</Text>
-        </Pressable>
-      </View>
-    </View>
-  )
+    return(
+        <View style = {estilo.view}>
+            <Text style = {estilo.texto}>
+                {texto}
+            </Text>
+            <TextInput
+                style = {estilo.input}
+                value = {textoInserido}
+                onChangeText = {setTextoInserido}
+                placeholder = "Nome aqui"
+            />
+            <Pressable style = {estilo.press} onPress = {() => setTexto(textoInserido)}>
+                <Text style = {estilo.textoPress}>Salvar</Text>
+            </Pressable>
+            <Text style = {estilo.textoResposta}>
+                {setTexto}
+            </Text>
+        </View>
+    )
 }
