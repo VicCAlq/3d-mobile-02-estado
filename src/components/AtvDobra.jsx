@@ -5,12 +5,11 @@ Crie e exporte por padrão um componente chamado "AtvDobra" que recebe um argume
 O componente deve exibir uma <View> contendo um <Text>, que vai exibir este número recebido como argumento, 
 e um <Pressable>, que ao ser clicado, modifica o valor do número para dobrar o valor dele.
 */
-// Elementos necessários para o componente
 
 import { View, Text, Pressable, StyleSheet } from 'react-native'
 import { useState } from 'react'
 
-// Estilos de "CSS"
+
 const estilo = StyleSheet.create({
   view: {
     alignItems: "center",
@@ -44,17 +43,11 @@ const estilo = StyleSheet.create({
     alignItems: "center",
   }
 })
-
 export default function AtvDobra() {
-  // Criação da variável "placar" e da função que altera seu valor
   const [numero, setNumero] = useState(1)
-
-  // Funções que vão ser executadas pelos botões
   function Dobrar() {
     setNumero(numero * 2)
   }
-
-  // Parte visual do componente
   return(
     <View style={estilo.view}>
       <Text style={estilo.texto}>
